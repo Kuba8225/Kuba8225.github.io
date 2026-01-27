@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0c0f" />
+  <title>HARMONIA — Gabinet Psychologiczny</title>
+  <meta name="description" content="HARMONIA — demo strony gabinetu psychologicznego. Spokojny, nowoczesny design, sekcje pod zaufanie i zapytania." />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+
+  <header class="header" data-elevate>
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Harmonia — start">
+        <img class="brand__logo" src="logo.svg" alt="Harmonia" width="160" height="56" />
+      </a>
+
+      <nav class="nav" aria-label="Nawigacja">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggleLines" aria-hidden="true"></span>
+          <span class="sr">Menu</span>
+        </button>
+
+        <div id="navMenu" class="nav__menu">
+          <a href="#o-mnie">O mnie</a>
+          <a href="#oferta">Oferta</a>
+          <a href="#jak-to-dziala">Jak to działa</a>
+          <a href="#faq">FAQ</a>
+          <a class="btn btn--ghost" href="#kontakt">Kontakt</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="main" tabindex="-1">
+    <section id="top" class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="gold gold--a"></div>
+        <div class="gold gold--b"></div>
+        <div class="gold gold--c"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="kicker">GABINET PSYCHOLOGICZNY • DEMO</p>
+          <h1>Spokojniej. Jaśniej. Krok po kroku.</h1>
+          <p class="lead">Bezpieczna przestrzeń do rozmowy i zmiany. Pomoc w kryzysie, stresie, obniżonym nastroju oraz w budowaniu lepszych relacji.</p>
+
+          <div class="hero__cta">
+            <a class="btn" href="#kontakt">Umów konsultację</a>
+            <a class="btn btn--ghost" href="#oferta">Zobacz obszary wsparcia</a>
+          </div>
+
+          <div class="hero__highlights" role="list">
+            <div class="pill" role="listitem">
+              <span class="pill__dot" aria-hidden="true"></span>
+              <span>Konsultacje stacjonarne i online</span>
+            </div>
+            <div class="pill" role="listitem">
+              <span class="pill__dot" aria-hidden="true"></span>
+              <span>Dyskrecja i jasne zasady współpracy</span>
+            </div>
+            <div class="pill" role="listitem">
+              <span class="pill__dot" aria-hidden="true"></span>
+              <span>Krótki formularz — szybka odpowiedź</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero__card" aria-label="Szybki kontakt">
+          <div class="card">
+            <h2 class="card__title">Pierwszy krok</h2>
+            <p class="card__text">Wypełnij formularz, a wrócę z propozycją terminu i krótkimi informacjami organizacyjnymi.</p>
+
+            <form class="form" action="#" method="post" onsubmit="return false">
+              <label class="field">
+                <span>Imię</span>
+                <input autocomplete="given-name" name="name" type="text" placeholder="Np. Anna" />
+              </label>
+              <label class="field">
+                <span>E-mail</span>
+                <input autocomplete="email" name="email" type="email" placeholder="np. anna@email.pl" />
+              </label>
+              <label class="field">
+                <span>W czym mogę pomóc?</span>
+                <textarea name="message" rows="4" placeholder="Krótko opisz sytuację (opcjonalnie)"></textarea>
+              </label>
+
+              <button class="btn btn--full" type="submit">Wyślij</button>
+              <p class="fine">* To jest projekt DEMO. Formularz nie wysyła wiadomości.</p>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="o-mnie" class="section">
+      <div class="container">
+        <div class="grid grid--2">
+          <div>
+            <h2>O gabinecie</h2>
+            <p class="muted">HARMONIA to demo koncepcji strony dla gabinetu psychologicznego — spokojna estetyka, klarowna oferta i mocne CTA. Treści mają charakter przykładowy.</p>
+            <p>W praktyce klient potrzebuje szybko odpowiedzi na pytania: <strong>czy mogę Ci zaufać</strong>, <strong>z czym pomagasz</strong> i <strong>jak się umówić</strong>. Ta strona prowadzi użytkownika dokładnie tą ścieżką.</p>
+
+            <div class="badges" role="list">
+              <div class="badge" role="listitem">Podejście: psychoedukacja + narzędzia</div>
+              <div class="badge" role="listitem">Forma: online / stacjonarnie</div>
+              <div class="badge" role="listitem">Czas: 50 min</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Najczęstsze powody kontaktu</h3>
+            <ul class="list">
+              <li>przewlekły stres i przeciążenie</li>
+              <li>trudne emocje, obniżony nastrój</li>
+              <li>kryzysy w relacji i komunikacji</li>
+              <li>spadek pewności siebie</li>
+              <li>zmiany życiowe (praca, rozstanie, przeprowadzka)</li>
+            </ul>
+            <p class="fine">W razie zagrożenia życia lub zdrowia skontaktuj się z numerem alarmowym 112.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="oferta" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Oferta</h2>
+          <p class="muted">Krótko i konkretnie — aby klient od razu wiedział, czy to miejsce dla niego.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card2">
+            <h3>Konsultacja psychologiczna</h3>
+            <p>Rozpoznanie potrzeb, celów i sytuacji. Ustalenie kolejnych kroków.</p>
+            <div class="meta">50 min • online / stacjonarnie</div>
+          </article>
+
+          <article class="card2">
+            <h3>Psychoedukacja i strategie radzenia</h3>
+            <p>Praktyczne narzędzia do pracy ze stresem, napięciem i trudnymi emocjami.</p>
+            <div class="meta">materiały • ćwiczenia • plan</div>
+          </article>
+
+          <article class="card2">
+            <h3>Wsparcie w kryzysie</h3>
+            <p>Ustabilizowanie, uporządkowanie, wzmocnienie zasobów. Bez oceniania.</p>
+            <div class="meta">bezpieczna rozmowa • kierunek</div>
+          </article>
+        </div>
+
+        <div class="pricing" aria-label="Cennik">
+          <div class="pricing__box">
+            <h3>Cennik (przykład)</h3>
+            <div class="priceRow"><span>Konsultacja 50 min</span><strong>200 zł</strong></div>
+            <div class="priceRow"><span>Pakiet 4 spotkań</span><strong>720 zł</strong></div>
+            <p class="fine">* Cennik jest przykładowy (DEMO). W realnym wdrożeniu dopasowujemy go do klienta.</p>
+          </div>
+          <div class="pricing__box pricing__box--gold">
+            <h3>Chcesz zapytać o termin?</h3>
+            <p>Najprościej: napisz wiadomość w formularzu. Odpowiem w 24–48h.</p>
+            <a class="btn btn--full" href="#kontakt">Przejdź do kontaktu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jak-to-dziala" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Jak to działa</h2>
+          <p class="muted">Proces w 3 krokach — usuwa niepewność i zwiększa konwersję.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <div class="step__num">1</div>
+            <div>
+              <h3>Kontakt</h3>
+              <p>Krótka wiadomość: czego dotyczy temat i jaka forma spotkania jest OK.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__num">2</div>
+            <div>
+              <h3>Ustalenie celu</h3>
+              <p>Na pierwszym spotkaniu porządkujemy sytuację i ustalamy, co ma się zmienić.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__num">3</div>
+            <div>
+              <h3>Plan i narzędzia</h3>
+              <p>Dostajesz konkretne strategie i ćwiczenia do wdrożenia między spotkaniami.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="faq" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>FAQ</h2>
+          <p class="muted">Najczęstsze pytania — mniej obiekcji, więcej zapisów.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary>Czy konsultacja online jest skuteczna?</summary>
+            <p>Tak — dla wielu tematów to wygodna i efektywna forma. W razie potrzeby można przejść na spotkania stacjonarne.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Ile spotkań potrzeba?</summary>
+            <p>To zależy od celu. Czasem wystarczą 1–3 konsultacje, czasem warto pracować dłużej. Ustalamy to wspólnie.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Jak przygotować się do pierwszej wizyty?</summary>
+            <p>Wystarczy, że krótko opowiesz, co Cię sprowadza. Możesz spisać pytania lub objawy, które chcesz omówić.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Czy to jest terapia?</summary>
+            <p>Ta strona to demo. W realnej wersji precyzujemy zakres: konsultacje, wsparcie psychologiczne lub psychoterapia (jeśli dotyczy).</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="section">
+      <div class="container">
+        <div class="grid grid--2">
+          <div>
+            <h2>Kontakt</h2>
+            <p class="muted">Zostaw wiadomość — odpowiem z propozycją terminu. (DEMO)</p>
+
+            <div class="contact">
+              <div class="contact__row"><span class="label">E-mail</span><a href="mailto:kontakt@harmonia-demo.pl">kontakt@harmonia-demo.pl</a></div>
+              <div class="contact__row"><span class="label">Telefon</span><a href="tel:+48123456789">+48 123 456 789</a></div>
+              <div class="contact__row"><span class="label">Miasto</span><span>Warszawa (przykład)</span></div>
+            </div>
+
+            <div class="note">
+              <strong>Uwaga:</strong> To jest realizacja DEMO do portfolio. Dane kontaktowe są przykładowe.
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Napisz wiadomość</h3>
+            <form class="form" action="#" method="post" onsubmit="return false">
+              <label class="field">
+                <span>Imię</span>
+                <input name="name" type="text" placeholder="Np. Kamil" />
+              </label>
+              <label class="field">
+                <span>E-mail</span>
+                <input name="email" type="email" placeholder="np. kamil@email.pl" />
+              </label>
+              <label class="field">
+                <span>Wiadomość</span>
+                <textarea name="message" rows="5" placeholder="W czym mogę pomóc?"></textarea>
+              </label>
+              <button class="btn btn--full" type="submit">Wyślij</button>
+              <p class="fine">* Formularz w demo nie wysyła wiadomości.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <img src="logo.svg" alt="Harmonia" width="140" height="48" />
+        <p class="fine">DEMO realizacji do portfolio JWStudioWeb.</p>
+      </div>
+      <div class="footer__right">
+        <a href="#top">Do góry</a>
+        <span class="sep">•</span>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
