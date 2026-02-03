@@ -87,7 +87,7 @@
     header img{max-width:360px;margin:0 auto;filter:drop-shadow(0 0 12px rgba(212,175,55,.4))}
     .subtitle{margin-top:10px;font-size:16px;letter-spacing:3px;color:var(--gold-soft);text-transform:uppercase}
     .top-cta{margin-top:16px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-    .btn{border:1px solid rgba(212,175,55,.35);color:var(--gold);padding:10px 16px;border-radius:999px;transition:.25s}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(212,175,55,.35);color:var(--gold);padding:10px 16px;border-radius:999px;transition:.25s}
     .btn:hover{border-color:var(--gold);box-shadow:0 0 0 4px rgba(212,175,55,.1)}
 
     /* SOCIAL (FB/IG) – prawy górny róg */
@@ -141,6 +141,100 @@
     .badge{position:absolute;top:10px;right:10px;border:1px solid rgba(212,175,55,.35);color:var(--gold);padding:4px 8px;border-radius:999px;font-size:12px}
     .step h3{color:var(--gold);margin:6px 0 8px;font-size:17px}
 
+    /* CENNIK */
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+    .price-card{
+      position:relative;
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:var(--radius);
+      padding:18px;
+      background:rgba(255,255,255,.02);
+      box-shadow:var(--shadow);
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .price-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 8px 24px rgba(212,175,55,0.22);
+    }
+    .price-card--featured{
+      border-color: rgba(212,175,55,.40);
+      background:linear-gradient(180deg, rgba(212,175,55,0.07), rgba(255,255,255,0.02));
+      box-shadow:0 10px 28px rgba(212,175,55,0.12), var(--shadow);
+    }
+    .price-badge{
+      position:absolute;
+      top:14px;
+      right:14px;
+      border:1px solid rgba(212,175,55,.35);
+      color:var(--gold);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.4px;
+    }
+    .price-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .price-card h3{
+      color:var(--gold);
+      font-size:20px;
+      margin:0;
+    }
+    .price{
+      color:var(--gold);
+      font-weight:700;
+      font-size:34px;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .price span{
+      font-size:14px;
+      color:var(--gold-soft);
+      margin-left:4px;
+    }
+    .price .period{
+      font-size:14px;
+      color:var(--gold-soft);
+      margin-left:8px;
+      font-weight:500;
+      opacity:.95;
+    }
+    .price-desc{
+      margin:10px 0 12px;
+      color:#e0d7b5;
+      line-height:1.6;
+    }
+    .price-list{
+      margin:0 0 14px;
+      padding-left:18px;
+      color:var(--text);
+      line-height:1.8;
+    }
+    .price-list li{color:#d9d9d9}
+    .price-foot{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:8px;
+    }
+    .small-note{
+      margin-top:16px;
+      color:var(--muted);
+      text-align:center;
+      font-size:13px;
+      line-height:1.6;
+    }
+
     /* Kontakt */
     .contact{display:grid;gap:10px;background:rgba(255,255,255,.02);border:1px solid rgba(212,175,55,.18);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);max-width:520px;margin:0 auto;text-align:center}
 
@@ -160,11 +254,12 @@
       </a>
     </div>
 
-    <img src="logo.png" alt="Logo JWStudioWeb" width="360" height="auto">
+    <img src="logo.png" alt="Logo JWStudioWeb" width="360">
     <div class="subtitle">Projektowanie Stron Internetowych</div>
     <div class="top-cta">
       <a class="btn" href="#kontakt">Darmowa konsultacja</a>
       <a class="btn" href="#realizacje">Zobacz realizacje</a>
+      <a class="btn" href="#cennik">Cennik</a>
     </div>
   </header>
 
@@ -233,22 +328,24 @@
               <p class="work-desc">Pastelowa, elegancka strona one-page: hero, usługi, galeria, opinie i kontakt.</p>
             </div>
           </a>
+
           <!-- Kafelek: Budowlanka DEMO -->
-<a class="work-item" href="realizacje/budowlany.html" target="_blank" rel="noopener">
-  <div class="work-thumb" style="background-image:url('realizacje/assets/hero.jpg');"></div>
-  <div class="work-body">
-    <h3 class="work-title">ProWykończenia – firma budowlana (DEMO)</h3>
-    <p class="work-desc">Projekt DEMO one-page: usługi, realizacje, opinie i kontakt – układ pod pozyskiwanie zapytań.</p>
-  </div>
-</a>
+          <a class="work-item" href="realizacje/budowlany.html" target="_blank" rel="noopener">
+            <div class="work-thumb" style="background-image:url('realizacje/assets/hero.jpg');"></div>
+            <div class="work-body">
+              <h3 class="work-title">ProWykończenia – firma budowlana (DEMO)</h3>
+              <p class="work-desc">Projekt DEMO one-page: usługi, realizacje, opinie i kontakt – układ pod pozyskiwanie zapytań.</p>
+            </div>
+          </a>
+
           <!-- Kafelek: HARMONIA DEMO -->
-<a class="work-item" href="realizacje/harmonia/index.html" target="_blank" rel="noopener">
-  <div class="work-thumb" style="background-image:url('realizacje/harmonia/preview.jpg');"></div>
-  <div class="work-body">
-    <h3 class="work-title">HARMONIA – gabinet psychologiczny (DEMO)</h3>
-    <p class="work-desc">Spokojny, premium one-page: oferta, proces, FAQ i kontakt – układ pod zaufanie i zapytania.</p>
-  </div>
-</a>
+          <a class="work-item" href="realizacje/harmonia/index.html" target="_blank" rel="noopener">
+            <div class="work-thumb" style="background-image:url('realizacje/harmonia/preview.jpg');"></div>
+            <div class="work-body">
+              <h3 class="work-title">HARMONIA – gabinet psychologiczny (DEMO)</h3>
+              <p class="work-desc">Spokojny, premium one-page: oferta, proces, FAQ i kontakt – układ pod zaufanie i zapytania.</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -263,6 +360,95 @@
           <div class="step"><span class="badge">3</span><h3>Stworzenie strony</h3><p>Tworzę stronę, optymalizuję SEO i wydajność.</p></div>
           <div class="step"><span class="badge">4</span><h3>Wdrożenie</h3><p>Publikacja i wsparcie po uruchomieniu.</p></div>
         </div>
+      </div>
+    </section>
+
+    <!-- CENNIK -->
+    <section id="cennik">
+      <div class="wrap">
+        <h2>Cennik</h2>
+        <p class="muted">Jasne pakiety dla firm lokalnych — wybierz wariant, który najszybciej pomoże Ci zdobywać zapytania.</p>
+
+        <div class="pricing-grid">
+          <!-- One Page -->
+          <div class="price-card">
+            <div class="price-head">
+              <h3>Strona One Page</h3>
+              <div class="price">600 <span>zł</span></div>
+            </div>
+
+            <p class="price-desc">
+              Strona w formie <strong>wizytówki online</strong> — wszystko na jednej, eleganckiej podstronie.
+              Klient szybko rozumie ofertę i od razu może przejść do kontaktu.
+            </p>
+
+            <ul class="price-list">
+              <li>układ pod pozyskiwanie zapytań (CTA, kontakt, czytelna oferta)</li>
+              <li>sekcje: oferta / o firmie / opinie / kontakt (lub wg potrzeb)</li>
+              <li>responsywność (telefon, tablet, komputer)</li>
+              <li>podstawy SEO (tytuły, opisy, struktura)</li>
+            </ul>
+
+            <div class="price-foot">
+              <a class="btn" href="#kontakt">Darmowa konsultacja</a>
+            </div>
+          </div>
+
+          <!-- Multi Page -->
+          <div class="price-card price-card--featured">
+            <div class="price-badge">Najczęściej wybierane</div>
+
+            <div class="price-head">
+              <h3>Strona Multi Page</h3>
+              <div class="price">1400 <span>zł</span></div>
+            </div>
+
+            <p class="price-desc">
+              Rozbudowana strona z <strong>wieloma zakładkami</strong> — idealna, gdy masz kilka usług i chcesz wyglądać
+              bardziej profesjonalnie. Taki układ ułatwia też budowanie widoczności w Google.
+            </p>
+
+            <ul class="price-list">
+              <li>kilka zakładek (np. Oferta / O nas / Realizacje / FAQ / Kontakt)</li>
+              <li>lepsza prezentacja usług i przewaga nad konkurencją</li>
+              <li>czytelna nawigacja + układ pod konwersję</li>
+              <li>podstawy SEO i wydajności</li>
+            </ul>
+
+            <div class="price-foot">
+              <a class="btn" href="#kontakt">Zapytaj o termin</a>
+            </div>
+          </div>
+
+          <!-- Abonament serwisowania -->
+          <div class="price-card">
+            <div class="price-head">
+              <h3>Abonament serwisowania</h3>
+              <div class="price">40 <span>zł</span><span class="period">/ mies.</span></div>
+            </div>
+
+            <p class="price-desc">
+              Dla firm, które chcą mieć <strong>spokój</strong> po wdrożeniu — drobne poprawki i opieka, żeby strona była aktualna
+              i działała bez niespodzianek.
+            </p>
+
+            <ul class="price-list">
+              <li>drobne aktualizacje treści (np. godziny, oferta, cennik, zdjęcia)</li>
+              <li>małe poprawki UI (np. przycisk, sekcja, układ)</li>
+              <li>kontrola działania strony i szybka reakcja na zgłoszenia</li>
+              <li>przypomnienia o rzeczach do poprawy (np. treści, sekcje, CTA)</li>
+            </ul>
+
+            <div class="price-foot">
+              <a class="btn" href="#kontakt">Chcę serwis</a>
+            </div>
+          </div>
+        </div>
+
+        <p class="small-note">
+          * Domena i hosting mogą być rozliczane osobno (jeśli nie masz — pomogę dobrać).<br>
+          * Zakres serwisowania dopasujemy do rodzaju strony i Twoich potrzeb.
+        </p>
       </div>
     </section>
 
@@ -288,46 +474,53 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Liczniki – animacja
-    const counters=document.querySelectorAll('.stat-number');
-    const obs=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          counters.forEach(el=>{
-            const end=+el.dataset.target;
-            let i=0;const step=()=>{i+=1;if(i<=end){el.textContent=i;requestAnimationFrame(step)}};
+    const counters = document.querySelectorAll('.stat-number');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          counters.forEach(el => {
+            const end = +el.dataset.target;
+            let i = 0;
+            const step = () => {
+              i += 1;
+              if (i <= end) {
+                el.textContent = i;
+                requestAnimationFrame(step);
+              }
+            };
             step();
           });
           obs.disconnect();
         }
       });
-    },{threshold:0.3});
-    if(counters.length)obs.observe(counters[0]);
+    }, { threshold: 0.3 });
+    if (counters.length) obs.observe(counters[0]);
 
     // Wykres
-    const ctx=document.getElementById('marketingChart');
-    if(ctx){
-      new Chart(ctx,{
-        type:'bar',
-        data:{
-          labels:['Google Ads','Social media','Ruch organiczny','Polecenia','E-mail'],
-          datasets:[{
-            label:'Wpływ strony WWW (%)',
-            data:[85,78,95,60,72],
-            backgroundColor:'rgba(212,175,55,0.7)',
-            borderColor:'rgba(212,175,55,1)',
-            borderWidth:1,
-            borderRadius:6
+    const ctx = document.getElementById('marketingChart');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Google Ads', 'Social media', 'Ruch organiczny', 'Polecenia', 'E-mail'],
+          datasets: [{
+            label: 'Wpływ strony WWW (%)',
+            data: [85, 78, 95, 60, 72],
+            backgroundColor: 'rgba(212,175,55,0.7)',
+            borderColor: 'rgba(212,175,55,1)',
+            borderWidth: 1,
+            borderRadius: 6
           }]
         },
-        options:{
-          scales:{y:{beginAtZero:true,ticks:{color:'#e0c873'}},x:{ticks:{color:'#e0c873'}}},
-          plugins:{legend:{labels:{color:'#e0c873'}}}
+        options: {
+          scales: {
+            y: { beginAtZero: true, ticks: { color: '#e0c873' } },
+            x: { ticks: { color: '#e0c873' } }
+          },
+          plugins: { legend: { labels: { color: '#e0c873' } } }
         }
       });
     }
   </script>
 </body>
 </html>
-
-
-
