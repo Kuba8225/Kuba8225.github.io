@@ -234,7 +234,35 @@
       font-size:13px;
       line-height:1.6;
     }
+    
+/* FIX: badge nie zlewa się i nie nachodzi na cenę na telefonach */
+.price-badge{
+  background: rgba(10,10,10,.75);
+  border-color: rgba(212,175,55,.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
 
+/* Mobile */
+@media (max-width: 420px){
+  /* przenosimy badge na lewą stronę i robimy miejsce u góry */
+  .price-card--featured{
+    padding-top: 56px;
+  }
+  .price-badge{
+    left: 14px;
+    right: auto;
+    top: 14px;
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+
+  /* opcjonalnie: nagłówek może się zawijać ładniej */
+  .price-head{
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
     /* Kontakt */
     .contact{display:grid;gap:10px;background:rgba(255,255,255,.02);border:1px solid rgba(212,175,55,.18);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);max-width:520px;margin:0 auto;text-align:center}
 
@@ -524,3 +552,4 @@
   </script>
 </body>
 </html>
+
