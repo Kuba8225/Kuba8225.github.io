@@ -83,19 +83,47 @@
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
 
     /* HEADER */
-    header{position:relative;text-align:center;padding:50px 20px 30px;background:linear-gradient(180deg,#0a0a0a,#111)}
-    header img{max-width:360px;margin:0 auto;filter:drop-shadow(0 0 12px rgba(212,175,55,.4))}
+    header{
+      position:relative;
+      text-align:center;
+      padding:50px 20px 30px;
+      background:linear-gradient(180deg,#0a0a0a,#111)
+    }
+    header img{
+      width:100%;
+      max-width:360px;
+      margin:0 auto;
+      filter:drop-shadow(0 0 12px rgba(212,175,55,.4))
+    }
     .subtitle{margin-top:10px;font-size:16px;letter-spacing:3px;color:var(--gold-soft);text-transform:uppercase}
     .top-cta{margin-top:16px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(212,175,55,.35);color:var(--gold);padding:10px 16px;border-radius:999px;transition:.25s}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid rgba(212,175,55,.35);color:var(--gold);
+      padding:10px 16px;border-radius:999px;transition:.25s
+    }
     .btn:hover{border-color:var(--gold);box-shadow:0 0 0 4px rgba(212,175,55,.1)}
 
-    /* SOCIAL (FB/IG) – prawy górny róg */
-    .socials{position:absolute;top:22px;right:22px;display:flex;gap:14px}
+    /* SOCIAL (FB/IG) – prawy górny róg (desktop) */
+    .socials{position:absolute;top:22px;right:22px;display:flex;gap:14px;z-index:2}
     .socials a{display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center}
     .socials svg{width:22px;height:22px;fill:var(--gold);transition:transform .25s ease, fill .25s ease}
     .socials a:hover svg{fill:var(--gold-soft);transform:scale(1.08)}
-    @media (max-width:540px){ .socials{top:16px;right:16px} }
+
+    /* MOBILE FIX: logo nie wchodzi pod ikonki i ma większy margines */
+    @media (max-width:540px){
+      header{padding:38px 16px 26px}
+      /* przenosimy ikony do normalnego flow na telefonach (nie nachodzą na logo) */
+      .socials{
+        position:static;
+        justify-content:center;
+        margin:0 0 14px;
+      }
+      header img{max-width:300px}
+    }
+    @media (max-width:360px){
+      header img{max-width:260px}
+    }
 
     /* SEKCJE */
     section{padding:60px 0}
@@ -105,7 +133,12 @@
 
     /* Liczniki */
     .stats{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;margin-top:26px}
-    .stat-box{width:180px;height:180px;border:2px solid var(--gold);border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,0.03);box-shadow:var(--shadow)}
+    .stat-box{
+      width:180px;height:180px;border:2px solid var(--gold);
+      border-radius:var(--radius);display:flex;flex-direction:column;
+      align-items:center;justify-content:center;background:rgba(255,255,255,0.03);
+      box-shadow:var(--shadow)
+    }
     .stat-number{font-size:42px;color:var(--gold);font-weight:700}
     .stat-label{font-size:14px;color:var(--gold-soft);margin-top:6px;text-transform:uppercase;text-align:center;letter-spacing:1px}
 
@@ -121,7 +154,11 @@
 
     /* Realizacje */
     .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}
-    .work-item{border:1px solid rgba(212,175,55,.18);border-radius:var(--radius);overflow:hidden;background:rgba(255,255,255,.02);box-shadow:var(--shadow);transition:transform .3s ease, box-shadow .3s ease}
+    .work-item{
+      border:1px solid rgba(212,175,55,.18);border-radius:var(--radius);overflow:hidden;
+      background:rgba(255,255,255,.02);box-shadow:var(--shadow);
+      transition:transform .3s ease, box-shadow .3s ease
+    }
     .work-item:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(212,175,55,0.25)}
     .work-thumb{aspect-ratio:16/9;background-size:cover;background-position:center;transition:filter .3s ease, transform .3s ease}
     .work-item:hover .work-thumb{filter:brightness(1.1);transform:scale(1.03)}
@@ -176,6 +213,12 @@
       border-radius:999px;
       font-size:12px;
       letter-spacing:.4px;
+
+      /* poprawa czytelności (żeby nie zlewało się z ceną) */
+      background: rgba(10,10,10,.75);
+      border-color: rgba(212,175,55,.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
     .price-head{
       display:flex;
@@ -234,39 +277,34 @@
       font-size:13px;
       line-height:1.6;
     }
-    
-/* FIX: badge nie zlewa się i nie nachodzi na cenę na telefonach */
-.price-badge{
-  background: rgba(10,10,10,.75);
-  border-color: rgba(212,175,55,.45);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
 
-/* Mobile */
-@media (max-width: 420px){
-  /* przenosimy badge na lewą stronę i robimy miejsce u góry */
-  .price-card--featured{
-    padding-top: 56px;
-  }
-  .price-badge{
-    left: 14px;
-    right: auto;
-    top: 14px;
-    font-size: 11px;
-    padding: 5px 9px;
-  }
+    /* Mobile: badge nie nachodzi na cenę */
+    @media (max-width: 420px){
+      .price-card--featured{padding-top:56px}
+      .price-badge{
+        left:14px;
+        right:auto;
+        top:14px;
+        font-size:11px;
+        padding:5px 9px;
+      }
+      .price-head{
+        flex-wrap:wrap;
+        align-items:flex-start;
+      }
+    }
 
-  /* opcjonalnie: nagłówek może się zawijać ładniej */
-  .price-head{
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-  
     /* Kontakt */
-    .contact{display:grid;gap:10px;background:rgba(255,255,255,.02);border:1px solid rgba(212,175,55,.18);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);max-width:520px;margin:0 auto;text-align:center}
+    .contact{
+      display:grid;gap:10px;background:rgba(255,255,255,.02);
+      border:1px solid rgba(212,175,55,.18);border-radius:var(--radius);
+      padding:20px;box-shadow:var(--shadow);max-width:520px;margin:0 auto;text-align:center
+    }
 
-    footer{padding:32px 0;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid rgba(212,175,55,.1)}
+    footer{
+      padding:32px 0;color:var(--muted);font-size:13px;text-align:center;
+      border-top:1px solid rgba(212,175,55,.1)
+    }
   </style>
 </head>
 <body>
@@ -552,4 +590,3 @@
   </script>
 </body>
 </html>
-
